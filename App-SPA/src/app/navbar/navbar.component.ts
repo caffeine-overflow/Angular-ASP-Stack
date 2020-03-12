@@ -20,4 +20,16 @@ export class NavbarComponent implements OnInit {
       console.log(error);
     });
   }
+
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
+
+  logOut() {
+    localStorage.removeItem('token');
+    console.log('logged out');
+  }
+
+
 }
