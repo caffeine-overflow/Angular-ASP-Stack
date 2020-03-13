@@ -43,6 +43,7 @@ namespace App.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> login(UserForLoginDto userForLoginDto)
         {
+            throw new Exception("Yo");
             var userFromRepo = await _repo.Login(userForLoginDto.username.ToLower(), userForLoginDto.password);
 
             if (userFromRepo == null) return Unauthorized();
