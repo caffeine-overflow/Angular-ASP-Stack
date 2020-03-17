@@ -1,3 +1,21 @@
-.dropdown-toggle, .dropdown-item {
+@import url('https://fonts.googleapis.com/css?family=Mr+De+Haviland&display=swap');
+
+.form-inline{
+    position: absolute;
+    right:5%;
+}
+.dropdown-toggle, .dropdown-item 
+{
     cursor: pointer;
+}
+.navbar
+{
+    text-transform: initial;
+    font-size: 15px;
+    padding: 0 1rem 0 2rem;
+}
+.navbar-brand
+{
+  font-size: 45px;
+  font-family: 'Mr De Haviland', cursive;
 }
