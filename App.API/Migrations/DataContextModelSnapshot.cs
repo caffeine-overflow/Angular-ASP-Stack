@@ -22,9 +22,6 @@ namespace App.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("Userid")
-                        .HasColumnType("INTEGER");
-
                     b.Property<DateTime>("dateadded")
                         .HasColumnType("TEXT");
 
@@ -37,9 +34,12 @@ namespace App.API.Migrations
                     b.Property<string>("url")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("userid")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("id");
 
-                    b.HasIndex("Userid");
+                    b.HasIndex("userid");
 
                     b.ToTable("photos");
                 });
@@ -104,9 +104,11 @@ namespace App.API.Migrations
 
             modelBuilder.Entity("App.API.Models.Photo", b =>
                 {
-                    b.HasOne("App.API.Models.User", null)
+                    b.HasOne("App.API.Models.User", "user")
                         .WithMany("photos")
-                        .HasForeignKey("Userid");
+                        .HasForeignKey("userid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

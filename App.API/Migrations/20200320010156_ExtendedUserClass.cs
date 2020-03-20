@@ -60,23 +60,23 @@ namespace App.API.Migrations
                     description = table.Column<int>(nullable: false),
                     dateadded = table.Column<DateTime>(nullable: false),
                     ismain = table.Column<bool>(nullable: false),
-                    Userid = table.Column<int>(nullable: true)
+                    userid = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_photos", x => x.id);
                     table.ForeignKey(
-                        name: "FK_photos_Users_Userid",
-                        column: x => x.Userid,
+                        name: "FK_photos_Users_userid",
+                        column: x => x.userid,
                         principalTable: "Users",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_photos_Userid",
+                name: "IX_photos_userid",
                 table: "photos",
-                column: "Userid");
+                column: "userid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
