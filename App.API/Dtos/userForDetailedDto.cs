@@ -15,6 +15,7 @@ namespace App.API.Dtos
         public string city { get; set; }
         public string country { get; set; }
         public string photoUrl { get; set; }
+        public string aboutme { get; set; }
         public string lookingfor { get; set; }
         public string interests { get; set; }
         public ICollection<photosForDetailedDto> photos { get; set; }

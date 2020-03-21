@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace App.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200320010156_ExtendedUserClass")]
-    partial class ExtendedUserClass
+    [Migration("20200321223318_UserAndPhotosMigrate")]
+    partial class UserAndPhotosMigrate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,8 +27,8 @@ namespace App.API.Migrations
                     b.Property<DateTime>("dateadded")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("description")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("description")
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("ismain")
                         .HasColumnType("INTEGER");
@@ -51,6 +51,9 @@ namespace App.API.Migrations
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("aboutme")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("city")
                         .HasColumnType("TEXT");

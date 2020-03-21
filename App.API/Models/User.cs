@@ -13,6 +13,7 @@ namespace App.API.Models
         public DateTime dateofbirth { get; set; }
         public DateTime created { get; set; }
         public DateTime lastactive { get; set; }
+        public string aboutme { get; set; }
         public string lookingfor { get; set; }
         public string interests { get; set; }
         public string city { get; set; }

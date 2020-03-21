@@ -25,8 +25,8 @@ namespace App.API.Migrations
                     b.Property<DateTime>("dateadded")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("description")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("description")
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("ismain")
                         .HasColumnType("INTEGER");
@@ -49,6 +49,9 @@ namespace App.API.Migrations
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("aboutme")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("city")
                         .HasColumnType("TEXT");
